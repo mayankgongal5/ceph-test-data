@@ -1,0 +1,72 @@
+--- BEFORE write-only ---
+Timestamp: 2026-03-30 18:35:42
+
+=== Full heap stats ===
+client.rgw.8000 tcmalloc heap stats:------------------------------------------------
+MALLOC:      126744424 (  120.9 MiB) Bytes in use by application
+MALLOC: +     98476032 (   93.9 MiB) Bytes in page heap freelist
+MALLOC: +      3999344 (    3.8 MiB) Bytes in central cache freelist
+MALLOC: +      6777856 (    6.5 MiB) Bytes in transfer cache freelist
+MALLOC: +     52155944 (   49.7 MiB) Bytes in thread cache freelists
+MALLOC: +      5242880 (    5.0 MiB) Bytes in malloc metadata
+MALLOC:   ------------
+MALLOC: =    293396480 (  279.8 MiB) Actual memory used (physical + swap)
+MALLOC: +            0 (    0.0 MiB) Bytes released to OS (aka unmapped)
+MALLOC:   ------------
+MALLOC: =    293396480 (  279.8 MiB) Virtual address space used
+MALLOC:
+MALLOC:           3357              Spans in use
+MALLOC:            598              Thread heaps in use
+MALLOC:           8192              Tcmalloc page size
+------------------------------------------------
+Call ReleaseFreeMemory() to release freelist memory to the OS (via madvise()).
+Bytes released to the OS take up virtual address space but no physical memory.
+
+=== Key metrics ===
+MALLOC:      126744424 (  120.9 MiB) Bytes in use by application
+MALLOC: +     98476032 (   93.9 MiB) Bytes in page heap freelist
+MALLOC: +      3999344 (    3.8 MiB) Bytes in central cache freelist
+MALLOC: +      6777856 (    6.5 MiB) Bytes in transfer cache freelist
+MALLOC: +     52155944 (   49.7 MiB) Bytes in thread cache freelists
+MALLOC: +            0 (    0.0 MiB) Bytes released to OS (aka unmapped)
+MALLOC:           3357              Spans in use
+MALLOC:            598              Thread heaps in use
+
+────────────────────────────────────────
+
+--- AFTER write-only (50 objects uploaded) ---
+Timestamp: 2026-03-30 18:35:44
+
+=== Full heap stats ===
+client.rgw.8000 tcmalloc heap stats:------------------------------------------------
+MALLOC:      126816976 (  120.9 MiB) Bytes in use by application
+MALLOC: +    563634176 (  537.5 MiB) Bytes in page heap freelist
+MALLOC: +      4941728 (    4.7 MiB) Bytes in central cache freelist
+MALLOC: +      6858240 (    6.5 MiB) Bytes in transfer cache freelist
+MALLOC: +     54255504 (   51.7 MiB) Bytes in thread cache freelists
+MALLOC: +      5242880 (    5.0 MiB) Bytes in malloc metadata
+MALLOC:   ------------
+MALLOC: =    761749504 (  726.5 MiB) Actual memory used (physical + swap)
+MALLOC: +      1409024 (    1.3 MiB) Bytes released to OS (aka unmapped)
+MALLOC:   ------------
+MALLOC: =    763158528 (  727.8 MiB) Virtual address space used
+MALLOC:
+MALLOC:           3680              Spans in use
+MALLOC:            598              Thread heaps in use
+MALLOC:           8192              Tcmalloc page size
+------------------------------------------------
+Call ReleaseFreeMemory() to release freelist memory to the OS (via madvise()).
+Bytes released to the OS take up virtual address space but no physical memory.
+
+=== Key metrics ===
+MALLOC:      126816976 (  120.9 MiB) Bytes in use by application
+MALLOC: +    563634176 (  537.5 MiB) Bytes in page heap freelist
+MALLOC: +      4941728 (    4.7 MiB) Bytes in central cache freelist
+MALLOC: +      6858240 (    6.5 MiB) Bytes in transfer cache freelist
+MALLOC: +     54255504 (   51.7 MiB) Bytes in thread cache freelists
+MALLOC: +      1409024 (    1.3 MiB) Bytes released to OS (aka unmapped)
+MALLOC:           3680              Spans in use
+MALLOC:            598              Thread heaps in use
+
+────────────────────────────────────────
+

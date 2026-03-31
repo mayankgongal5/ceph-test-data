@@ -1,0 +1,7 @@
+Test Metadata
+─────────────
+Date:       Monday 30 March 2026 06:39:08 PM IST
+Size:       medium (2M)
+Cache:      256 MiB (268435456 bytes)
+Objects:    50 per workload
+Endpoint:   http://localhost:8000
